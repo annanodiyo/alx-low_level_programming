@@ -18,11 +18,13 @@ char *cap_string(char *str)
 	{
 		if (capitalize && isalpha(str[i]))
 		str[i] = toupper(str[i]);
-
-		capitalize = (str[i] == ' ' || str[i] == ',' || str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' || str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}' || str[i] == '\n' || str[i] == '\t');
+		capitalize = (str[i] == ' ' || str[i] == ',' || str[i] == ';' || str[i] == '.' ||
+              str[i] == '!' || str[i] == '?' || str[i] == '"' || str[i] == '(' ||
+              str[i] == ')' || str[i] == '{' || str[i] == '}' || str[i] == '\n' ||
+              str[i] == '\t');
 
 		if (isalpha(str[i]))
-			capitalize = 0;
+		capitalize = 0;
 	}
 	return (str);
 }
