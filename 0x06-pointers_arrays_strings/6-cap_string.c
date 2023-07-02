@@ -10,21 +10,29 @@
 
 char *cap_string(char *str)
 {
-	int i;
-	int length = strlen(str);
-	int capitalize = 1;
+	int i = 0;
 
-	for (i = 0; i < length; i++)
+	while (str[i])
 	{
-		if (capitalize && isalpha(str[i]))
-		str[i] = toupper(str[i]);
-		capitalize = (str[i] == ' ' || str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-              str[i] == '!' || str[i] == '?' || str[i] == '"' || str[i] == '(' ||
-              str[i] == ')' || str[i] == '{' || str[i] == '}' || str[i] == '\n' ||
-              str[i] == '\t');
+		while (!(str[i] >= 'a' && str[i] <= 'z'))
+			i++;
 
-		if (isalpha(str[i]))
-		capitalize = 0;
+		if (str[i - 1] == ' ' ||
+		str[i - 1] == ',' ||
+		str[i - 1] == ';' ||
+		str[i - 1] == '.' ||
+		str[i - 1] == '!' ||
+		str[i - 1] == '?' ||
+		str[i - 1] == '"' ||
+		str[i - 1] == '(' ||
+		str[i - 1] == ')' ||
+		str[i - 1] == '{' ||
+		str[i - 1] == '}' ||
+		str[i - 1] == '\n' ||
+		str[i - 1] == '\t' ||
+		i == 0)
+			str[i] -= 32;
+		i++;
 	}
 	return (str);
 }
