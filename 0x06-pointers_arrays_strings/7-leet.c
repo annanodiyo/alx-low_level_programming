@@ -8,40 +8,21 @@
  * @str: parameter to check
  * Return: 0.
  */
-
 char *leet(char *str)
 {
-	int len = strlen(str);
-	int i;
+	int i, j;
+	char s1[] = " ̅aAeEoOtTlL";
+	char s2[] = "4433007711";
 
-	for (i = 0; i < len; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		char c = str[i];
-
-		if (c == 'a' || c == 'A')
+		for (j = 0; j < 10; j++)
 		{
-			putchar('4');
-		}
-		else if (c == 'e' || c == 'E')
-		{
-			putchar('3');
-		}
-		else if (c == 'o' || c == 'O')
-		{
-			putchar('0');
-		}
-		else if (c == 't' || c == 'T')
-		{
-			putchar('7');
-		}
-		else if (c == 'l' || c == 'L')
-		{
-			putchar('1');
-		}
-		else
-		{
-			putchar(c);
+			if (str[i] == s1[j])
+			{
+				str[i] = s2[j];
+			}
 		}
 	}
-	return (0);
+	return (str);
 }
