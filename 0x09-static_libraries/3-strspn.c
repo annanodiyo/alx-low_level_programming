@@ -6,6 +6,6 @@
  * @accept: input
  * Return: Always 0
  */
-unsigned int_strspn(char *s, char *accept)
+unsigned int _strspn(char *s, char *accept)
 {
 }

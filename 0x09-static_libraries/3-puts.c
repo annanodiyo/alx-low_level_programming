@@ -1,11 +1,11 @@
 #include "main.h"
-void _puts(char *str);
 #include <stdio.h>
 
 /**
- * main - entry point
+ * _puts - function to call
+ * @str: string
  * Return: Always 0
  */
-int main(void)
+void _puts(char *str)
 {
 }
