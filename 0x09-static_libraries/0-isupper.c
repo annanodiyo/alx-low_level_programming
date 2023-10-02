@@ -3,9 +3,13 @@
 /**
  * _isupper - function to call
  * @c: character to check
- * Return: Always 0 on success
+ * Return: 1 or 0
  */
 
 int _isupper(int c)
 {
+	if (c <= 'Z' && c >= 'A')
+		return (1);
+	else
+		return (0);
 }
